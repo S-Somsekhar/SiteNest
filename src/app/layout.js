@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
         </header>
 
         {/* Main content */}
-        <main className="pt-10 flex flex-col">{children}</main>
+        <main className="pt-10 bg-black flex flex-col">{children}</main>
 
         {/* Footer */}
         <footer className="w-full bg-neutral-950 py-8 text-center text-sm text-white/40 border-t border-white/10">

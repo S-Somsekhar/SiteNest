@@ -9,7 +9,7 @@ export default function OtherProducts() {
             label: "LeadNest → Done-for-you Lead Gen",
           },
           {
-            href: "https://clientnesthq.com",
+            href: "https://crm.clientnesthq.com",
             label: "ClientNest → Lightweight CRM for Freelancers",
           },
           {
