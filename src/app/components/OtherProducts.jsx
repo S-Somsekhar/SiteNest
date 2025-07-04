@@ -13,7 +13,7 @@ export default function OtherProducts() {
             label: "ClientNest → Lightweight CRM for Freelancers",
           },
           {
-            href: "/nestpack",
+            href: "https://neststarter.clientnesthq.com",
             label: "Nest Starter Pack → Templates & Scripts",
           },
         ].map(({ href, label }, i) => (
