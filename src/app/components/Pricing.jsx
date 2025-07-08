@@ -2,12 +2,12 @@ export default function Pricing() {
   const plans = [
     {
       title: "Starter Site",
-      price: "$299",
+      price: "$499",
       features: ["Single-page site", "Mobile-optimized", "Delivered in 3 days"],
     },
     {
       title: "Pro Website",
-      price: "$499",
+      price: "$899",
       features: ["Multi-page site", "Custom animations", "Priority support"],
       highlight: true,
     },
@@ -42,36 +42,56 @@ export default function Pricing() {
 
       {/* Website Packages */}
       <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {plans.map(({ title, price, features, highlight }, i) => (
-          <div
-            key={i}
-            className={`p-6 rounded-xl text-white/80 transition ${
-              highlight
-                ? "bg-neutral-900/40 border border-neon shadow-[0_0_20px_#39FF14]"
-                : "bg-neutral-900/30 border border-white/10 hover:border-neon hover:shadow-[0_0_5px_#39FF14]"
-            }`}
-          >
-            {highlight && (
-              <div className="mb-3 text-sm font-bold text-neon uppercase tracking-wide">
-                Most Popular
-              </div>
-            )}
-            <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-            <p className="text-3xl font-bold text-neon mb-4">{price}</p>
-            <ul className="mb-6 space-y-1 text-sm text-white/60">
-              {features.map((f, j) => (
-                <li key={j}>• {f}</li>
-              ))}
-            </ul>
-            <a
-              href="#contact"
-              className="inline-block border border-neon text-neon px-5 py-2 rounded hover:bg-neon hover:text-black hover:shadow-[0_0_5px_#39FF14] transition"
-            >
-              {price === "Contact Us" ? "Get in Touch" : "Book Now"}
-            </a>
-          </div>
-        ))}
+{plans.map(({ title, price, features, highlight }, i) => (
+  <div
+    key={i}
+    className={`p-6 rounded-xl text-white/80 transition ${
+      highlight
+        ? "bg-neutral-900/40 border border-neon shadow-[0_0_20px_#39FF14]"
+        : "bg-neutral-900/30 border border-white/10 hover:border-neon hover:shadow-[0_0_5px_#39FF14]"
+    }`}
+  >
+    {/* Optional Badge */}
+    {highlight && (
+      <div className="mb-3 text-sm font-bold text-neon uppercase tracking-wide">
+        Most Popular
       </div>
+    )}
+
+    <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+
+    {/* Pricing with Early Bird Promo */}
+    {price !== "Contact Us" ? (
+      <div className="mb-4">
+        <div className="text-sm text-white/40 line-through mb-1">
+          {title === "Starter Site" ? "$499" : title === "Pro Website" ? "$899" : ""}
+        </div>
+        <div className="text-3xl font-bold text-neon">{title === "Starter Site" ? "$399" : "$799"}</div>
+        <div className="text-xs mt-1 text-white/50 italic">Launch Promo – Limited Time</div>
+      </div>
+    ) : (
+      <p className="text-3xl font-bold text-neon mb-4">{price}</p>
+    )}
+
+    {/* Features */}
+    <ul className="mb-6 space-y-1 text-sm text-white/60">
+      {features.map((f, j) => (
+        <li key={j}>• {f}</li>
+      ))}
+    </ul>
+
+    <a
+      href="#contact"
+      className="inline-block border border-neon text-neon px-5 py-2 rounded hover:bg-neon hover:text-black hover:shadow-[0_0_5px_#39FF14] transition"
+    >
+      {price === "Contact Us" ? "Get in Touch" : "Book Now"}
+    </a>
+  </div>
+))}
+      </div>
+      <div className="text-center mt-6 text-sm text-white/50 italic">
+  🚨 We only accept <span className="text-white font-semibold">5 new clients per month</span> to maintain quality and fast turnaround. Don’t miss your slot!
+</div>
 
       {/* Hosting Plans */}
       <h3 className="text-2xl font-bold text-white mt-20 mb-6">Optional Hosting Plans</h3>
@@ -97,6 +117,7 @@ export default function Pricing() {
           </div>
         ))}
       </div>
+
     </section>
   )
 }

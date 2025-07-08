@@ -20,6 +20,10 @@ export default function Faq() {
       q: "Where will my site be hosted?",
       a: "We host it on premium global infrastructure with SSL, fast CDN, and 99.9% uptime — all managed by our team.",
     },
+    {
+      q: "What tech stack do you use to build the websites?",
+      a: "All our websites are handcrafted using Next.js (React framework) and Tailwind CSS. This setup ensures lightning-fast performance, responsive design, and smooth animations — optimized for both SEO and user experience.",
+    },
   ]
 
   return (
