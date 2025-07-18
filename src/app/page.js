@@ -7,10 +7,12 @@ import Pricing from "./components/Pricing"
 import Contact from "./components/Contact"
 import FAQ from "./components/FAQ"
 import OtherProducts from "./components/OtherProducts"
+import Navigation from "./components/Navbar"
 
 export default function Home() {
   return (
     <>
+      <Navigation />
       <Hero />
       <Why />
       <Portfolio />

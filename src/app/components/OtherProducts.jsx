@@ -1,8 +1,11 @@
 export default function OtherProducts() {
   return (
-    <section className="py-20 px-6 bg-black text-white text-center">
-      <h2 className="text-2xl md:text-3xl font-bold text-neon mb-8">Explore More from NestHQ</h2>
-      <div className="flex flex-col md:flex-row justify-center gap-6">
+    <section className="py-20 px-6 bg-black text-center">
+      <h2 className="text-2xl md:text-3xl font-bold text-neon mb-8">
+        Explore More from NestHQ
+      </h2>
+      
+      <div className="flex flex-col md:flex-row justify-center gap-4 max-w-6xl mx-auto">
         {[
           {
             href: "https://leadnest.clientnesthq.com",
@@ -21,7 +24,8 @@ export default function OtherProducts() {
             key={i}
             href={href}
             target="_blank"
-            className="px-6 py-3 rounded text-white hover:text-[#39ff14] border border-neon transition-colors duration-200"
+            rel="noopener noreferrer"
+            className="px-6 py-3 rounded-md text-white border border-neon hover:bg-neon hover:text-black transition-colors"
           >
             {label}
           </a>
@@ -30,4 +34,3 @@ export default function OtherProducts() {
     </section>
   )
 }
-

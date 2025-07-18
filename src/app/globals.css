@@ -68,3 +68,126 @@ body {
     background-position: 0% 50%;
   }
 }
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust for fixed header */
+}
+
+/* Enhanced neon glow */
+.text-glow {
+  text-shadow: 0 0 8px #39FF14, 0 0 16px rgba(57, 255, 20, 0.5);
+  transition: text-shadow 0.3s ease;
+}
+.hover\\:text-glow:hover {
+  text-shadow: 0 0 12px #39FF14, 0 0 24px #39FF14;
+}
+
+/* Nav link hover effect */
+nav a {
+  position: relative;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #39FF14;
+  transition: width 0.3s ease;
+}
+nav a:hover::after {
+  width: 100%;
+}
+/* Grid overlay */
+.bg-grid {
+  background-image: 
+    linear-gradient(to right, #80808012 1px, transparent 1px),
+    linear-gradient(to bottom, #80808012 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Hover glow */
+.hover-glow {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+.hover-glow:hover {
+  box-shadow: 0 0 20px #39FF14;
+  transform: translateY(-3px);
+}
+
+/* Portfolio image hover effect */
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+/* Step connector arrows */
+@media (min-width: 768px) {
+  .md\:grid-cols-3 > div:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #39FF14;
+    opacity: 0.3;
+    font-size: 1.5rem;
+  }
+}
+
+/* Pricing card hover effect */
+.hover-glow {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+.hover-glow:hover {
+  box-shadow: 0 0 25px rgba(57, 255, 20, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Testimonial avatar hover */
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+/* FAQ accordion transitions */
+[data-accordion] {
+  transition: height 0.3s ease, opacity 0.2s ease;
+}
+
+/* Product card hover effect */
+.hover-glow {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Contact button arrow */
+.group:hover .group-hover\:translate-x-1 {
+  transform: translateX(4px);
+}
+a, button {
+  cursor: pointer;
+}
+
+/* Smooth transitions for mobile menu */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Prevent FOUC on menu */
+@media (max-width: 767px) {
+  .md\\:flex {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .md\\:hidden {
+    display: none;
+  }
+}

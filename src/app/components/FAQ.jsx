@@ -1,4 +1,10 @@
+'use client'
+import { motion } from 'framer-motion'
+import { useState } from 'react'
+
 export default function Faq() {
+  const [activeIndex, setActiveIndex] = useState(null)
+
   const faqs = [
     {
       q: "Is this really custom-coded?",
@@ -27,16 +33,57 @@ export default function Faq() {
   ]
 
   return (
-    <section className="py-24 px-6 bg-black text-white text-left" id="faq">
-      <h2 className="text-3xl md:text-4xl font-bold text-neon mb-12 text-center">FAQ</h2>
-      <div className="max-w-4xl mx-auto space-y-10">
+    <section className="py-24 px-6 bg-black relative overflow-hidden" id="faq">
+      {/* Glow effect */}
+      <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-neon/5 blur-[80px]" />
+
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="text-3xl md:text-5xl font-bold text-neon mb-16 text-center text-glow"
+      >
+        Questions?
+      </motion.h2>
+
+      <div className="max-w-4xl mx-auto space-y-4">
         {faqs.map(({ q, a }, i) => (
-          <div key={i}>
-            <h3 className="text-xl font-semibold text-neon mb-2">{q}</h3>
-            <p className="text-white/80">{a}</p>
-          </div>
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1, duration: 0.5 }}
+            className="border-b border-white/10 pb-6"
+          >
+            <button
+              onClick={() => setActiveIndex(activeIndex === i ? null : i)}
+              className="flex justify-between items-center w-full text-left group"
+            >
+              <h3 className="text-xl font-semibold text-white group-hover:text-neon transition-colors">
+                {q}
+              </h3>
+              <span className="text-neon text-2xl ml-4">
+                {activeIndex === i ? '−' : '+'}
+              </span>
+            </button>
+            
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{
+                height: activeIndex === i ? 'auto' : 0,
+                opacity: activeIndex === i ? 1 : 0
+              }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden"
+            >
+              <p className="pt-4 text-white/80">{a}</p>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
     </section>
   )
 }
+
