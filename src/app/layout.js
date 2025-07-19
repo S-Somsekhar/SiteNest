@@ -8,6 +8,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
 export const metadata = {
   title: 'SiteNest — Clean Sites, Fast Launches',
   description: 'High-converting websites crafted from scratch. No templates. No AI clones. Just real code, clean design, and launch-ready pages in 72 hours.',
+  keywords: ['Website builder', 'Website hosting', 'Website Management', 'handcrafted websites', 'real websites', 'unit of ClientNest HQ', 'cheap websites'],
 }
 
 export default function RootLayout({ children }) {
