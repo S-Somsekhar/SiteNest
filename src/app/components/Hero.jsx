@@ -12,7 +12,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <p className="text-sm text-neon/80 mb-6 tracking-widest animate-pulse">
-          TRUSTED BY 200+ FOUNDERS
+          
         </p>
 
         <motion.h1 

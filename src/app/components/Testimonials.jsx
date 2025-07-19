@@ -49,9 +49,9 @@ export default function Testimonials() {
             className="group relative bg-neutral-900/50 border border-white/10 rounded-xl p-8 hover-glow"
           >
             {/* Quote marks */}
-            <div className="absolute top-6 left-6 text-5xl text-neon/20 font-serif">“</div>
+            <div className="absolute top-6 left-6 text-3xl text-neon/20 font-serif">“</div>
             
-            <p className="italic text-white/90 mb-6 relative z-10">“{quote}”</p>
+            <p className="italic text-white/90 mb-6 relative z-10">{quote}”</p>
             
             <div className="flex items-center gap-4">
               <div className="text-left">
